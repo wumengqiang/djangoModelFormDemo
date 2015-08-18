@@ -1,0 +1,32 @@
+<html>
+<head>
+{# Load the tag library #}
+{% load bootstrap3 %}
+{# load CSS and Javascript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+<title>
+{% block title %} {% endblock %}
+</title>
+</head>
+<body>
+<table id="maintable">
+    <tbody>
+    <tr>
+       <td id='leftmenu'>
+           <div id='mytags'>
+            <ul>
+           {% block tags  %} {% endblock %}
+           </ul>
+           </td>
+       <td id='main'>
+           {% block main %} {% endblock %}
+           </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
+

@@ -1,0 +1,25 @@
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+{# load CSS and Javascript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+<form role='form' action="/login/checkLogin" method="post" class="form-vertical col-sm-3" style="float right">
+    {% csrf_token %}
+    <div class='form-group'>
+        <input type='text' name='username' id='username' class="form-control" placeholder= '邮箱/登陆名'/>
+    </div>
+    <div class='form-group'>
+        <input type='password' name='passwd' class="form-control" id='passwd' placeholder='密码'/>
+    </div>
+    <button type="submit" class="btn btn-default">
+        {% bootstrap_icon "star" %} Submit
+    </button>
+    <a href='/login/register'   value='register'>register</a>
+</form>
+
+

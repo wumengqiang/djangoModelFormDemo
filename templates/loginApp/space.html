@@ -1,0 +1,17 @@
+{% extends "loginApp/base.html" %}
+{% block title %} {{ user.username }}的blog {% endblock %}
+{% block main %} 
+     {% if form_blog %}
+        <div>
+            <form method="post" action='/login/space' >
+                {% csrf_token %}
+                 <div>
+                     {{form_blog.as_p}}
+                 </div>
+                 <div>
+                 <button type='submit' >submit</button>
+                 </div>
+            </form>
+            </div>
+     {% endif %}
+{% endblock %}

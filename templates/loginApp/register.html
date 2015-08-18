@@ -1,0 +1,19 @@
+{% load bootstrap3%}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+
+<form role='form' class='col-sm-3' method='post' action='/login/checkRegister' >
+    {% csrf_token %}
+    <div class ='form-group'>
+        <input type='text' id='username' name='username' placeholder='邮箱/登录名' />
+    </div>
+    <div class='form-group'>
+        <input type='password' id='passwd' name='passwd' placeholder='密码'/>
+    </div>
+    <div class='form-group'>
+        <input type='password' id='passed_repeat' name='passwd_repeat' placeholder='重复密码'/>
+    </div>
+    <button type="submit" class="btn btn-default" >submit</button>
+    
+</form>
